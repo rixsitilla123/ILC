@@ -1,9 +1,15 @@
+.hero-section{
+    padding-bottom: 187px;
+}
+
 .hero-top{
     position: relative;
 }
 
 .hero__content{
     width: 733px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__title{
@@ -14,16 +20,20 @@
 
 .hero__text-wrapper{
     width: 547px;
+    margin-bottom: 32px;
 }
 
 .hero__doc{
     @include textStyle ($color: #303030, $fontSize: 14px, $fontWeight: 400, $lineHeight: 150%);
-    margin-bottom: 32px;
 }
 
 .hero__link{
     @include button ($width: 268px);
     display: inline-block;
+    transition: all 0.4s linear;
+    &:hover{
+    opacity: 0.8;
+    } 
 }
 
 .hero-img{
@@ -33,11 +43,105 @@
 }
 
 .hero__service{
+    @include display ();
     width: 712px;
+    margin-left: auto;
     padding: 32px 48px;
     position: relative;
     z-index: 2;
     border-radius: 10px;
     background: #F4F7FA;
     box-shadow: 0px 4px 100px 0px rgba(208, 218, 227, 0.57);
+}
+
+.hero-service-item:nth-child(2) > .hero__service-wrap{
+    width: 244px;
+}
+
+.hero-service-item:nth-child(3) > .hero__service-wrap{
+    width: 179px;
+}
+
+.hero__service-wrap{
+    width: 149px;
+    margin-top: 8px;
+}
+
+.hero__service-text{
+    @include textStyle ($color: #303030, $fontSize: 16px, $fontWeight: 400, $lineHeight: 26px);
+}
+
+@media only screen and (max-width: 845px){
+    .hero-top{
+        padding-bottom: 154px;
+        background-image: url(../images/hero-bg-img.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .hero__content{
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero__text-wrapper{
+        width: 100%;
+    }
+
+    .hero-img{
+        display: none;
+    }
+
+    .hero__service{
+        @include display ($direction: column);
+        width: 100%;
+        margin: 0 auto;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .hero-service-item, .hero__service-wrap{
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .hero-service-item:nth-child(2) > .hero__service-wrap, .hero-service-item:nth-child(3) > .hero__service-wrap{
+        width: 100%;
+    }
+}
+
+
+
+// bg img ni content img qilib posiotion bilan berib korish kerak 
+
+
+
+@media only screen and (max-width: 500px){
+    .hero-top{
+        background-position-y: 40px;
+        padding-bottom: 200px;
+    }
+
+    .hero__title{
+        @include textStyle ($color: #262626, $fontSize: 24px, $fontWeight: 700, $lineHeight: 30px); 
+    }
+
+    .hero__text-wrapper{
+        margin-bottom: 16px;
+    }
+
+    .hero__doc{
+        @include textStyle ($color: #303030, $fontSize: 12px, $fontWeight: 400, $lineHeight: 150%);
+    }
+
+    .hero__service{
+        padding: 32px 5px;
+    }
+}
+
+@media only screen and (max-width: 435px){
+    .hero-top{
+        background-position-y: 40px;
+        padding-bottom: 200px;
+    }
 }

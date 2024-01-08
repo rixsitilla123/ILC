@@ -1,10 +1,11 @@
 $blueColor: #273895;
 
 
-@mixin display($items:center, $space:space-between){
+@mixin display($items:center, $space:space-between, $direction: row){
     display: flex;
     align-items: $items;
     justify-content: $space;
+    flex-direction: $direction;
 }
 
 @mixin textStyle ($color: #303030, $fontSize: 12px, $fontWeight: 400, $lineHeight: normal){
